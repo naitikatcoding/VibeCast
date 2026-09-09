@@ -1,29 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import logo from '../public/logo.svg';
+
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="relative flex items-center w-[90%] max-w-5xl mx-auto border border-slate-700 px-6 py-4 rounded-full text-black text-sm mt-2.5">
-      {/* Left Section / Logo Space */}
-      <div className="flex items-center min-w-[120px]">
-        {/* Logo */}
-        <a href="#" className="flex items-center">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="4.706" cy="16" r="4.706" fill="#D9D9D9" />
-            <circle cx="16.001" cy="4.706" r="4.706" fill="#D9D9D9" />
-            <circle cx="16.001" cy="27.294" r="4.706" fill="#D9D9D9" />
-            <circle cx="27.294" cy="16" r="4.706" fill="#D9D9D9" />
-          </svg>
-        </a>
+    <nav className="relative z-50 flex items-center w-[90%] max-w-5xl mx-auto border border-slate-700 px-6 py-3 rounded-full text-black text-sm mt-2.5 bg-amber-100">
+      
+      {/* Left Section / Logo */}
+      <div className="flex items-center min-w-[120px] h-10 gap-1.5">
+        <Image 
+                width={50}
+                height={50}
+                src={logo} 
+                alt="Robot animation" 
+                unoptimized 
+              />
+        <span className="text-2xl text-green-800 font-bold">Prismify</span>
       </div>
 
       {/* Desktop Navigation */}
@@ -33,7 +30,7 @@ const Navbar = () => {
             Products
           </span>
 
-          <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
+          <span className="block absolute top-full left-0 group-hover:-translate-y-full transition-transform duration-300">
             Products
           </span>
         </a>
@@ -43,7 +40,7 @@ const Navbar = () => {
             Stories
           </span>
 
-          <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
+          <span className="block absolute top-full left-0 group-hover:-translate-y-full transition-transform duration-300">
             Stories
           </span>
         </a>
@@ -53,7 +50,7 @@ const Navbar = () => {
             Pricing
           </span>
 
-          <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
+          <span className="block absolute top-full left-0 group-hover:-translate-y-full transition-transform duration-300">
             Pricing
           </span>
         </a>
@@ -63,7 +60,7 @@ const Navbar = () => {
             Docs
           </span>
 
-          <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">
+          <span className="block absolute top-full left-0 group-hover:-translate-y-full transition-transform duration-300">
             Docs
           </span>
         </a>
@@ -71,7 +68,7 @@ const Navbar = () => {
 
       {/* Desktop Buttons */}
       <div className="hidden md:flex items-center gap-4 ml-8">
-        <button className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+        <button className="border border-slate-600 hover:bg-slate-800 hover:text-white px-4 py-2 rounded-full text-sm font-medium transition">
           Contact
         </button>
 
@@ -101,7 +98,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`absolute top-20 left-0 bg-black w-full text-base flex-col items-center gap-4 py-6 rounded-2xl ${
+        className={`absolute top-full mt-3 left-0 bg-black w-full text-base flex-col items-center gap-4 py-6 rounded-2xl ${
           mobileMenuOpen ? "flex" : "hidden"
         }`}
       >
