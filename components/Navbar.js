@@ -20,7 +20,7 @@ const Navbar = () => {
                 alt="Robot animation" 
                 unoptimized 
               />
-        <span className="text-2xl text-green-800 font-bold">Prismify</span>
+        <span className="text-2xl text-black font-bold inclusivesans">Prismify</span>
       </div>
 
       {/* Desktop Navigation */}
